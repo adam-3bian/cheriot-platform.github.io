@@ -1,3 +1,48 @@
+@article{10.1145/3831361,
+	author = {Chisnall, David},
+	title = {How CHERIoT Provides Strong and Usable Isolation Without an MMU},
+	year = {2026},
+	issue_date = {July/August 2026},
+	publisher = {Association for Computing Machinery},
+	address = {New York, NY, USA},
+	volume = {24},
+	number = {4},
+	issn = {1542-7730},
+	url = {https://doi.org/10.1145/3831361},
+	doi = {10.1145/3831361},
+	abstract = {Co-design of hardware and software offers stronger security and ease of useThe CHERIoT platform is a RISC-V-based ISA, an RTOS, and a programmer model that were co-designed for security. The ISA provides hardware mechanisms for enforcing spatial and (heap) temporal memory safety, type safety for opaque types, and lightweight call gates, building on top of CHERI research. The privilege-separated RTOS provides services on top of this exposed as compartments that expose function calls as interfaces and share objects by simply passing pointers to them.The same programmer model is exposed to other users for creating least-privilege architectures where you can reason about the security by reading the (C, C++, or Rust) source code or using auditing tools to get a coarse-grained worst-case approximation. CHERIoT is optimized for small devices but showcases what is possible at any scale if you start by assuming CHERI.},
+	journal = {Queue},
+	month = sep,
+	numpages = {22}
+}
+
+@mastersthesis{titarosemeyer2025,
+	author = {Tita Rosemeyer},
+	title = {Formal Verification of Capability-Safety in the CHERIoT-Ibex Processor},
+	school = {University of Oxford},
+	year = {2025},
+	pdf = {https://www.cs.ox.ac.uk/tom.melham/grads/Rosemeyer-2025-FVC}
+}
+
+@inproceedings{10.1145/3731569.3764844,
+author = {Amar, Saar and Chen, Tony and Chisnall, David and Filardo, Nathaniel Wesley and Laurie, Ben and Lefeuvre, Hugo and Liu, Kunyan and Moore, Simon W. and Norton-Wright, Robert and Seltzer, Margo and Tao, Yucong and Watson, Robert N. M. and Xia, Hongyan},
+title = {CHERIoT RTOS: An OS for Fine-Grained Memory-Safe Compartments on Low-Cost Embedded Devices},
+year = {2025},
+isbn = {9798400718700},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3731569.3764844},
+doi = {10.1145/3731569.3764844},
+abstract = {Embedded systems do not benefit from strong memory protection, because they are designed to minimize cost. At the same time, there is increasing pressure to connect embedded devices to the internet, where their vulnerable nature makes them routinely subject to compromise. This fundamental tension leads to the current status-quo where exploitable devices put individuals and critical infrastructure at risk.We present the design of a dependable embedded OS where compartmentalization and memory safety are first-class citizens. We co-design the OS with an embedded hardware platform that implements CHERI capabilities at a similar cost profile to existing chips with minimal security. We demonstrate key design benefits: fine-grained fault-tolerant compartments, OS-level support for compartment-interface hardening, and auditing facilities to thwart supply-chain attacks, among others, and show that they come at a memory usage and performance cost that allows their widespread deployment in cheap, resource-constrained devices.},
+booktitle = {Proceedings of the ACM SIGOPS 31st Symposium on Operating Systems Principles},
+pages = {67–84},
+numpages = {18},
+location = {Lotte Hotel World, Seoul, Republic of Korea},
+series = {SOSP '25},
+pdf = {https://dl.acm.org/doi/pdf/10.1145/3731569.3764844}
+}
+
+
 @unpublished{riscvsummit2023cheriot,
 title= {Introduction to CHERIoT},
 author = {Liu, Kunyan},
@@ -54,4 +99,26 @@ number = {MSR-TR-2023-6},
 	publisher = {Association for Computing Machinery},
 	booktitle = {Accepted for publication at the 43rd International Conference on Computer-Aided Design (ICCAD `24)},
 	abstract = {Protecting data in memory from attackers continues to be a concern in computing systems. CHERI is a promising approach to achieve such protection, by providing and enforcing fine-grained memory protection directly in the hardware. Creating trust for the entire system stack, however, requires a gap-free verification of CHERI's hardware-based protection mechanisms. Existing verification methods for CHERI target the abstract ISA model rather than the underlying hardware implementation. Fully ensuring the CHERI security guarantees for a concrete RTL implementation is a challenge in previous flows and demands high manual efforts. This paper presents VeriCHERI, a novel approach to security verification. It is conceptionally different from previous works in that it does not require any ISA specification. Instead of checking compliance with a golden ISA model, we check against well-established global security objectives of confidentiality and integrity. Fully covering these objectives, VeriCHERI uses as few as four unbounded properties to exhaustively prove or disprove any vulnerability. We demonstrate the effectiveness and scalability of VeriCHERI on a RISC-V based processor implementing a CHERI variant.}
+}
+
+@inproceedings{bolztereick_et_al:LIPIcs.ECOOP.2025.3,
+  author =	{Bolz-Tereick, CF and Panayi, Luke and McKeogh, Ferdia and Spink, Tom and Berger, Martin},
+  title =	{{Pydrofoil: Accelerating Sail-Based Instruction Set Simulators}},
+  booktitle =	{39th European Conference on Object-Oriented Programming (ECOOP 2025)},
+  pages =	{3:1--3:31},
+  series =	{Leibniz International Proceedings in Informatics (LIPIcs)},
+  ISBN =	{978-3-95977-373-7},
+  ISSN =	{1868-8969},
+  year =	{2025},
+  volume =	{333},
+  editor =	{Aldrich, Jonathan and Silva, Alexandra},
+  publisher =	{Schloss Dagstuhl -- Leibniz-Zentrum f{\"u}r Informatik},
+  address =	{Dagstuhl, Germany},
+  URL =		{https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ECOOP.2025.3},
+  URN =		{urn:nbn:de:0030-drops-232962},
+  doi =		{10.4230/LIPIcs.ECOOP.2025.3},
+  annote =	{Keywords: Instruction set architecture, processor, domain-specific language, just-in-time compilation, meta-tracing},
+  pdf = {https://drops.dagstuhl.de/storage/00lipics/lipics-vol333-ecoop2025/LIPIcs.ECOOP.2025.3/LIPIcs.ECOOP.2025.3.pdf},
+  abstract = {We present Pydrofoil, a multi-stage compiler that generates instruction set simulators (ISSs) from processor instruction set architectures (ISAs) expressed in the high-level, verification-oriented ISA specification language Sail. Pydrofoil shows a > 230x speedup over the C-based ISS generated by Sail on our benchmarks, and is based on the following insights. (i) An ISS is effectively an interpreter loop, and tracing just-in-time (JIT) compilers have proven effective at accelerating those, albeit mostly for dynamically typed languages. (ii) ISS workloads are highly atypical, dominated by intensive bit manipulation operations. Conventional compiler optimisations for general-purpose programming languages have limited impact for speeding up such workloads. We develop suitable domain-specific optimisations. (iii) Neither tracing JIT compilers, nor ahead-of-time (AOT) compilation alone, even with domain-specific optimisations, suffice for the generation of performant ISSs. Pydrofoil therefore implements a hybrid approach, pairing an AOT compiler with a tracing JIT built on the meta-tracing PyPy framework. AOT and JIT use domain-specific optimisations. Our benchmarks demonstrate that combining AOT and JIT compilers provides significantly greater performance gains than using either compiler alone. 
+}
 }
